@@ -1,0 +1,27 @@
+{
+  "name": "streifenjunko_homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm run buildcss && bin/pelican content",
+    "build:watch": "concurrently \"npm run buildcss:watch\" \"bin/pelican --debug --autoreload\" \"npm run sync\"",
+    "buildcss": "node-sass --output theme/static/css/ --output-style compressed theme/scss/",
+    "buildcss:watch": "node-sass --watch --output theme/static/css/ --output-style compressed theme/scss/",
+    "publish": "npm run buildcss && bin/pelican content -s publishconf.py",
+    "publish:netlify": "npm run buildcss && pelican content -s publishconf.py",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "cd output && browser-sync start --server --files '*.html, css/*.css'",
+    "dev": "npm run build && npm run build:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.23.7",
+    "concurrently": "^3.5.1",
+    "node-sass": "^4.8.3"
+  }
+}

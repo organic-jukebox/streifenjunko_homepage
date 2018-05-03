@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} Archive{% endblock %}
+{% block content %}
+    
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="/index.html">Back</a>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    
+    <section id="concerts" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <h2 class="section-heading text-center">Concert archive:</h2>
+                        <hr class="light">
+                        <div>
+                            <div class="concerts">
+                                <table class="table table-no-border">
+                                        <tbody>
+                                        {% for concert in concerts_archive('streifenjunko') %}
+                                            <tr>
+                                                <td class="text-right date text-faded">
+                                                    <h3><em>{{ concert.date.strftime('%b %d, %Y') }}</em></h3>
+                                                </td>
+                                                <td class="text-left location text-faded">
+                                                    <p>{{ concert.country }}, {{ concert.city }}<br><strong>{{ concert.venue }}</strong></p>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                </table>
+                                </div>
+                            </div>
+                </div>
+        </div>
+    </section>
+
+{% endblock content %}

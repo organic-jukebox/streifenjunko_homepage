@@ -1,0 +1,8 @@
+bin/
+lib/
+include/
+output/
+pip-selfcheck.json
+pyvenv.cfg
+node_modules/
+homepage.code-workspace
