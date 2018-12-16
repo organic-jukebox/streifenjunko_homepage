@@ -80,7 +80,15 @@ p {
 
 p.text-author {
     color: rgba(255,255,255,.5);
-    margin-bottom: 35px;
+    //margin-top: 0px;
+    //padding-top: 0px;
+    margin-bottom: 20px;
+}
+
+p.text-review {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 section {
