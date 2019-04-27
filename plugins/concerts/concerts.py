@@ -13,7 +13,8 @@ def load_csv(generator):
     # with open(filepath, 'r', encoding='utf-8') as f:
     #    doc = f.read()
 
-    data = urllib.request.urlopen("https://raw.githubusercontent.com/organic-jukebox/concert-archive/master/concerts.csv").read(50000)
+    # data = urllib.request.urlopen("https://raw.githubusercontent.com/organic-jukebox/concert-archive/master/concerts.csv").read(50000)
+    data = urllib.request.urlopen("https://www.dropbox.com/s/6316bu78vv30mqj/concerts.csv?raw=1").read(50000)
     doc = data.decode("utf-8")
     csv_list = filter(None, doc.split('\n'))
     data = []
